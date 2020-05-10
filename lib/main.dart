@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() =>
-    runApp(
+void main() => runApp(
       MyApp(),
     );
 
@@ -11,24 +10,77 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.blueGrey,
         appBar: AppBar(
-          title: Text("Heading"),
+          title: Text("Sample App"),
           backgroundColor: Colors.deepOrangeAccent,
         ),
-        body: Center(
-          child: Column(
+        body: Container(
+          height: 1000,
+          width: 1000,
+          margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
+          color: Colors.teal,
+          padding: EdgeInsets.all(20),
+          child: Row(
+//            mainAxisSize: MainAxisSize.min,
+//            verticalDirection: VerticalDirection.down,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+
             children: <Widget>[
-              Image(
-                fit: BoxFit.fill,
-                image: NetworkImage(
-                    "https://image.shutterstock.com/image-photo/lovely-beach-picture-beautiful-260nw-1554809048.jpg"),
+              Container(
+                height: double.infinity,
+                width: 100,
+                color: Colors.red,
               ),
-              Image(
-                fit: BoxFit.fill,
-                image: AssetImage(
-                    "images/diamond.png"),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    height: 100,
+                    width: 100,
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    height: 100,
+                    width: 100,
+                    color: Colors.green,
+                  ),
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundImage: NetworkImage(
+                        "https://image.shutterstock.com/image-photo/lovely-beach-picture-beautiful-260nw-1554809048.jpg"),
+                  ),
+                  Text(
+                    "Hello",
+                    style: TextStyle(
+                        fontFamily: 'Roboto-Italic',
+                        fontSize: 50,
+                        color: Colors.deepOrange[300],
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 2.5
+                    ),
+                  )
+                ],
               ),
+              Container(
+                height: double.infinity,
+                width: 100,
+                color: Colors.blue,
+              ),
+//              Image(
+//                fit: BoxFit.contain,
+//                image: NetworkImage(
+//                    "https://image.shutterstock.com/image-photo/lovely-beach-picture-beautiful-260nw-1554809048.jpg"),
+//              ),
+//              SizedBox(
+//                height: 20,
+//              ),
+//              Image(
+//                height: 500,
+//                width: double.infinity,
+//                fit: BoxFit.contain,
+//                image: AssetImage("images/diamond.png"),
+//              ),
             ],
           ),
         ),
